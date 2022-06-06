@@ -11,7 +11,7 @@ dependencies {
 }
 
 plugins {
-    id("java")
+    java
 }
 
 tasks {
