@@ -1,7 +1,5 @@
 package tld.domain.name;
 
-import org.apache.commons.lang3.StringUtils;
-
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -18,7 +16,7 @@ public class name extends JavaPlugin {
         final Logger logger = getLogger();
         final String name = getName() + " v" + getDescription().getVersion();
         final String authors = "By " + String.join(", ", getDescription().getAuthors());
-        final String line = StringUtils.repeat("-", Math.max(name.length(), authors.length()));
+        final String line = "-".repeat(Math.max(name.length(), authors.length()));
         logger.info(ChatColor.DARK_AQUA + line);
         logger.info(ChatColor.AQUA + name);
         logger.info(ChatColor.AQUA + authors);
