@@ -2,7 +2,7 @@ name: name
 author: srnyx
 description: This is an example description
 
-main: tld.domain.name.Main
+main: tld.domain.name.name
 version: ${version}
 api-version: 1.19
 
