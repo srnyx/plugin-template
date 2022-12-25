@@ -4,7 +4,9 @@
 name: Build
 on:
   push:
-    branches: [main, master]
+    branches:
+      - main
+      - master
     paths:
       - 'gradle/**'
       - 'src/**'
