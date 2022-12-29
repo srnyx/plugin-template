@@ -1,20 +1,9 @@
-name: name
-author: srnyx
-description: This is an example description
+name: ${name}
+description: DESCRIPTION
+authors:
+  - srnyx
+website: https://srnyx.xyz
 
-main: tld.domain.name.name
+main: xyz.srnyx.NAME.NAME
 version: ${version}
 api-version: 1.19
-
-commands:
-  example:
-    description: This is an example command
-    aliases:
-      - ex
-      - examples
-    permission: name.example
-
-permissions:
-  name.example:
-    description: This is an example permission
-    default: true
