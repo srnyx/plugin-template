@@ -6,4 +6,3 @@ website: https://srnyx.xyz
 
 main: xyz.srnyx.NAME.NAME
 version: ${version}
-api-version: 1.19
