@@ -10,9 +10,7 @@ on:
     paths:
       - 'gradle/**'
       - 'src/**'
-      - 'build.gradle'
       - 'build.gradle.kts'
-      - 'settings.gradle'
       - 'settings.gradle.kts'
       - 'gradlew'
       - 'gradlew.bat'
