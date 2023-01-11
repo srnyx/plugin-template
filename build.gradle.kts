@@ -3,19 +3,19 @@ group = "xyz.srnyx"
 
 plugins {
     java
-    id("com.github.johnrengelman.shadow") version "VERSION" // 7.1.2
+    id("com.github.johnrengelman.shadow") version "7.1.2"
 }
 
 repositories {
     mavenCentral() // org.spigotmc:spigot-api
     maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots") // org.spigotmc:spigot-api
+    maven("https://oss.sonatype.org/content/repositories/snapshots") // org.spigotmc:spigot-api
     maven("https://jitpack.io") // xyz.srnyx:annoying-api
 }
 
 dependencies {
-    compileOnly("org.spigotmc", "spigot-api", "1.19.3-R0.1-SNAPSHOT")
-	implementation("xyz.srnyx", "annoying-api", "VERSION") // https://srnyx.xyz/api
-    compileOnly("org.jetbrains:annotations:23.1.0")
+    compileOnly("org.spigotmc", "spigot-api", "1.11-R0.1-SNAPSHOT")
+	implementation("xyz.srnyx", "annoying-api", "2.0.3") // https://srnyx.xyz/api
 }
 
 tasks {
@@ -37,8 +37,10 @@ tasks {
 
     // Replace '${name}' and '${version}'
     processResources {
+        inputs.property("name", project.name)
+        inputs.property("version", version)
         filesMatching("**/plugin.yml") {
-            expand("name" to project.name, "version" to project.version)
+            expand("name" to project.name, "version" to version)
         }
     }
 }
