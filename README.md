@@ -12,4 +12,4 @@ Public template repository used when I create a new repository for one of my pro
 
 # Wiki
 
-For all information about the plugin (commands, permissions, etc...) please see the wiki at [github.com/srnyx/critical-colors/wiki](https://github.com/srnyx/template/wiki)
+For all information about the plugin (commands, permissions, etc...) please see the wiki at [github.com/srnyx/template/wiki](https://github.com/srnyx/template/wiki)
