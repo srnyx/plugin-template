@@ -59,17 +59,21 @@ key3:
 # Below are the different types of parameters that can be used...
 # The examples will use "==" as the splitter, but you can change it by modifying "plugin.splitters.placeholder"
 #
-# - time: A time will be outputed in milliseconds by the plugin. The parameter will determine the format of the time.
+# - time: A time (milliseconds) will be inputted by the plugin. The parameter will determine the format of the time.
 # Docs: https://commons.apache.org/proper/commons-lang/apidocs/org/apache/commons/lang3/time/DurationFormatUtils.html
-# Examples: "%cooldown==m':'s%" -> "1:30", "%cooldown==H':'m':'s%" -> "1:30:0", "%cooldown==d'd' H'h' m'm' s's'%" -> "1h 30m 0s"
+# Examples (5400000): "%cooldown==m':'s%" -> "1:30", "%cooldown==H':'m':'s%" -> "1:30:0", "%cooldown==d'd' H'h' m'm' s's'%" -> "1h 30m 0s"
 #
-# - decimal: A number will be outputed in milliseconds by the plugin. The parameter will determine the format of the number.
+# - number: A number will be inputted by the plugin. The parameter will determine the format of the number.
 # Docs: https://docs.oracle.com/javase/7/docs/api/java/text/DecimalFormat.html
-# Examples: "%money==#,###%" -> "8,637", "%money==#,###.##%" -> "8,637.2", "%money==#,###.00%" -> "8,637.20"
+# Examples (8637.2): "%money==#,###%" -> "8,637", "%money==#,###.##%" -> "8,637.2", "%money==#,###.00%" -> "8,637.20"
+#
+# - boolean: A boolean (true/false) will be inputted by the plugin. The parameter will determine the output of the boolean.
+# Docs: You must use '//' to split the true and false outputs. If you don't, the placeholder will be replaced with "true" or "false".
+# Examples (true): "%state==enabled//disabled%" -> "enabled", "%state==yes//no%" -> "yes", "%state==on//off%" -> "on"
 #
 # Placeholders that support parameters will be displayed as "%name==type%" in the message's placeholder list.
-# Examples: "%cooldown=time%, %money=decimal%"
-key4: "KDR: %kdr==#.##%" # %kdr==decimal%
+# Examples: "%cooldown=time%, %money=number%", "%state=boolean%"
+key4: "KDR: %kdr==#.##%" # %kdr==number%
 # --- END PLACEHOLDER PARAMETERS --- #
 
 
@@ -78,9 +82,16 @@ test: "%prefix%This is a test message!"
 
 # Messages for general plugin usage
 plugin:
-  # This will be what %prefix% is in all the other messages
-  # %prefix% can be used in any message in this file as many times as you want
-  prefix: "&3&lNAME &8&l| &b"
+  # These are placeholders that can be used in any message in this file
+  # This is extremely useful for things like prefixes, color schemes, and more
+  # Using a global placeholder is just like any other placeholder! Simply surround the placeholder name with "%" (ex: "%prefix%")
+  # WARNING: Global placeholders can conflict with local placeholders! Please be wary when creating your own global placeholder(s)!
+  global-placeholders: # It's recommended to keep all the default global placeholders (prefix, p, s, pe, se)
+    prefix: "&3&lANNOYING &8&l| &b" # Prefix for the plugin, typically used in the beginning of most messages
+    p: "&b" # Base color for non-error messages
+    s: "&3" # Highlight color for non-error messages
+    pe: "&c" # Base color for error messages
+    se: "&4" # Highlight color for error messages
 
   # These are the different splitters for messages/placeholders
   splitters:
@@ -92,10 +103,12 @@ plugin:
 # Error messages when a player does something wrong
 error:
   # Player doesn't have permission to use a command
-  no-permission: "%prefix%&cYou must have &4%permission%&c to use this!@@&c%command%@@%command%" # %permission%
+  no-permission: "%prefix%%pe%You must have %se%%permission%%pe% to use this!@@%pe%%command%@@%command%" # %permission%
   # Console tries to use a command that can only be used by players
-  player-only: "%prefix%&cYou must be a player to run this command!@@&c%command%@@%command%"
-  # Command is used with invalid/incorrect arguments
-  invalid-arguments: "%prefix%&cInvalid arguments!@@&c%command%@@%command%"
+  player-only: "%prefix%%pe%You must be a player to run this command!@@%pe%%command%@@%command%"
+  # Command is used with an invalid/incorrect argument
+  invalid-argument: "%prefix%%se%%argument%%pe% is an invalid argument!@@%pe%%command%@@%command%" # %argument%
+  # Command is used with multiple invalid/incorrect arguments
+  invalid-arguments: "%prefix%%pe%Invalid arguments!@@%pe%%command%@@%command%"
   # Command is used when it's disabled
-  disabled-command: "%prefix%&4%command%&c is disabled!@@&c%command%@@%command%"
+  disabled-command: "%prefix%%se%%command%%pe% is disabled!@@%pe%%command%@@%command%"
