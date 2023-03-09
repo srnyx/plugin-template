@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     compileOnly("org.spigotmc", "spigot-api", "1.11-R0.1-SNAPSHOT")
-	implementation("xyz.srnyx", "annoying-api", "2.0.3") // https://srnyx.xyz/api
+	implementation("xyz.srnyx", "annoying-api", "2.0.5")
 }
 
 tasks {
@@ -24,10 +24,23 @@ tasks {
         dependsOn("shadowJar")
     }
 
-    // Remove '-all' from the JAR file name and relocate the AnnoyingAPI package
+    // Remove '-all' from the JAR file name, relocate the AnnoyingAPI package, and clean up the build folder
     shadowJar {
         archiveClassifier.set("")
         relocate("xyz.srnyx.annoyingapi", "xyz.srnyx.PACKAGE.annoyingapi")
+        doLast {
+			// Delete all folders in the build directory besides libs
+			file("build").listFiles()?.forEach {
+				if (it.isDirectory && it.name != "libs") it.deleteRecursively()
+			}
+
+			// Move JAR file(s) to build folder then delete libs folder
+			copy {
+				from("build/libs")
+				into("build")
+			}
+			delete("build/libs")
+        }
     }
 
     // Text encoding
@@ -43,4 +56,13 @@ tasks {
             expand("name" to project.name, "version" to version)
         }
     }
+
+    // Disable unnecessary tasks
+    classes { enabled = false }
+    jar { enabled = false }
+    compileTestJava { enabled = false }
+    processTestResources { enabled = false }
+    testClasses { enabled = false }
+    test { enabled = false }
+    check { enabled = false }
 }
