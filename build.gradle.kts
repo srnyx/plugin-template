@@ -33,13 +33,6 @@ tasks {
 			file("build").listFiles()?.forEach {
 				if (it.isDirectory && it.name != "libs") it.deleteRecursively()
 			}
-
-			// Move JAR file(s) to build folder then delete libs folder
-			copy {
-				from("build/libs")
-				into("build")
-			}
-			delete("build/libs")
         }
     }
 
