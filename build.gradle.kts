@@ -14,8 +14,8 @@ repositories {
 }
 
 dependencies {
-    compileOnly("org.spigotmc", "spigot-api", "1.11-R0.1-SNAPSHOT")
-	implementation("xyz.srnyx", "annoying-api", "2.0.5")
+    compileOnly("org.spigotmc", "spigot-api", "1.8.8-R0.1-SNAPSHOT")
+	implementation("xyz.srnyx", "annoying-api", "2.1.2")
 }
 
 tasks {
