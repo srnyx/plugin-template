@@ -2,7 +2,7 @@ name: ${name}
 description: DESCRIPTION
 authors:
   - srnyx
-website: https://srnyx.xyz
+website: https://srnyx.com
 
 main: xyz.srnyx.NAME.NAME
 version: ${version}
