@@ -24,16 +24,10 @@ tasks {
         dependsOn("shadowJar")
     }
 
-    // Remove '-all' from the JAR file name, relocate the AnnoyingAPI package, and clean up the build folder
+    // Remove '-all' from the JAR file name and relocate the AnnoyingAPI package
     shadowJar {
         archiveClassifier.set("")
         relocate("xyz.srnyx.annoyingapi", "xyz.srnyx.PACKAGE.annoyingapi")
-        doLast {
-			// Delete all folders in the build directory besides libs
-			file("build").listFiles()?.forEach {
-				if (it.isDirectory && it.name != "libs") it.deleteRecursively()
-			}
-        }
     }
 
     // Text encoding
