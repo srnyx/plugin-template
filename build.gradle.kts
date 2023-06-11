@@ -1,21 +1,25 @@
+import me.dkim19375.dkimgradle.enums.Repository
+import me.dkim19375.dkimgradle.enums.maven
+import me.dkim19375.dkimgradle.util.spigotAPI
+
 version = "0.0.1"
 group = "xyz.srnyx"
 
 plugins {
     java
-    id("com.github.johnrengelman.shadow") version "7.1.2"
+    id("com.github.johnrengelman.shadow") version "8.1.1"
+    id("io.github.dkim19375.dkim-gradle") version "1.2.0"
 }
 
 repositories {
     mavenCentral() // org.spigotmc:spigot-api
-    maven("https://hub.spigotmc.org/nexus/content/repositories/snapshots") // org.spigotmc:spigot-api
-    maven("https://oss.sonatype.org/content/repositories/snapshots") // org.spigotmc:spigot-api
-    maven("https://jitpack.io") // xyz.srnyx:annoying-api
+    maven(Repository.SPIGOT) // org.spigotmc:spigot-api
+    maven(Repository.JITPACK) // xyz.srnyx:annoying-api
 }
 
 dependencies {
-    compileOnly("org.spigotmc", "spigot-api", "1.8.8-R0.1-SNAPSHOT")
-	implementation("xyz.srnyx", "annoying-api", "2.1.2")
+	compileOnly(spigotAPI("1.8.8"))
+	implementation("xyz.srnyx", "annoying-api", "3.0.1")
 }
 
 tasks {
@@ -43,13 +47,4 @@ tasks {
             expand("name" to project.name, "version" to version)
         }
     }
-
-    // Disable unnecessary tasks
-    classes { enabled = false }
-    jar { enabled = false }
-    compileTestJava { enabled = false }
-    processTestResources { enabled = false }
-    testClasses { enabled = false }
-    test { enabled = false }
-    check { enabled = false }
 }
