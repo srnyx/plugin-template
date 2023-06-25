@@ -1,14 +1,10 @@
-package xyz.srnyx.NAME;
+package xyz.srnyx.name;
 
 import xyz.srnyx.annoyingapi.AnnoyingPlugin;
 
 
-public class NAME extends AnnoyingPlugin {
-    public NAME() {
-        // Options
-        //options.KEY = VALUE;
+public class Name extends AnnoyingPlugin {
+    public Name() {
 
-        // Dependencies
-        //options.dependencies.add(AnnoyingDependency);
     }
 }

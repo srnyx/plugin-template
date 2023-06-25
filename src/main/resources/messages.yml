@@ -1,8 +1,5 @@
-DOCUMENTATION: https://annoying-api.srnyx.com/wiki/Messages-file
+DOCUMENTATION: https://annoying-api.srnyx.com/wiki/messages-file
 
-
-# This message can be used to test practically anything! FOR PLUGIN DEVELOPERS!
-test: "%prefix%This is a test message!"
 
 # Messages for general plugin usage
 plugin:
@@ -19,10 +16,13 @@ plugin:
 
   # These are the different splitters for messages/placeholders
   splitters:
-    # This is the splitter for the JSON components (see above). Default: "@@"
+    # This is the splitter for the JSON components. Default: "@@"
     json: "@@"
-    # This is the splitter for the placeholders. Default: "=="
+    # This is the splitter for placeholders with parameters. Default: "=="
     placeholder: "=="
+
+  # Message sent in the console when an update for the plugin is available
+  update-available: "%pe%A new version of %se%%plugin%%pe% is available! | Current: %se%%current%%pe% | New: %se%%new%" # %plugin%, %current%, %new%
 
 # Error messages when a player does something wrong
 error:

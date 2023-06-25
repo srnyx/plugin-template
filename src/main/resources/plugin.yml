@@ -1,9 +1,20 @@
 name: ${name}
-description: DESCRIPTION
+description: ${description}
 authors:
   - srnyx
 website: https://srnyx.com
 
-main: xyz.srnyx.NAME.NAME
+main: ${group}.name.Name
 version: ${version}
 api-version: 1.13
+
+annoying:
+  bStatsId: 12345
+  updatePlatforms:
+    - platform: MODRINTH
+      identifier: name
+    - platform: HANGAR
+      identifier: ${name}
+      author: srnyx
+    - platform: SPIGOT
+      identifier: 12345
