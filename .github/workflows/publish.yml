@@ -7,9 +7,8 @@ on:
 
 jobs:
   build:
-    steps:
-      - uses: srnyx/tools/.github/workflows/publish.yml@main
-        with:
-          modrinth: modrinthId
-          curseforge: curseforgeId
-        secrets: inherit
+    uses: srnyx/tools/.github/workflows/publish.yml@main
+    with:
+      modrinth: modrinthId
+      curseforge: curseforgeId
+    secrets: inherit
