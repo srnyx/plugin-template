@@ -12,3 +12,5 @@ jobs:
       modrinth: modrinthId
       curseforge: curseforgeId
     secrets: inherit
+    permissions:
+      contents: write
