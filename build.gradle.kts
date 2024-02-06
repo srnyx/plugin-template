@@ -8,5 +8,5 @@ plugins {
     id("com.github.johnrengelman.shadow") version "8.1.1"
 }
 
-setupAnnoyingAPI("4.1.0", "xyz.srnyx", "0.0.1", "DESCRIPTION")
+setupAnnoyingAPI("8469d47bd7", "xyz.srnyx", "0.0.1", "DESCRIPTION")
 spigotAPI("1.8.8")
