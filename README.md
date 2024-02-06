@@ -1,4 +1,4 @@
-# Template
+# Plugin Template
 
 Public Minecraft plugin template repository used when I create a new repository for one of my plugins. Feel free to use this or create a pull request to improve it!
 
@@ -8,9 +8,9 @@ Public Minecraft plugin template repository used when I create a new repository 
 
 ## Download
 
-**✅ Stable:** You can download the latest **stable** version at [Modrinth](https://modrinth.com/plugin/plugin-template), [Hangar](https://hangar.papermc.io/srnyx/PluginTemplate), [Spigot](https://spigotmc.org/resources/######), [Bukkit](https://dev.bukkit.org/projects/plugin-template), or [GitHub](https://github.com/srnyx/plugin-template/releases)
+**✅ Stable:** You can download the latest **stable** version at [Modrinth](https://modrinth.com/plugin/plugin-template), [Hangar](https://hangar.papermc.io/srnyx/PluginTemplate), [Spigot](https://spigotmc.org/resources/123456), [Bukkit](https://dev.bukkit.org/projects/plugin-template), or [GitHub](https://github.com/srnyx/plugin-template/releases)
 
-**🚧 Snapshot:** You can download the latest **snapshot** version at [actions/workflows/build.yml](https://github.com/srnyx/plugin-template/actions/workflows/build.yml)
+**🚧 Snapshot:** You can download the latest **snapshot** version at [github.com/srnyx/plugin-template/actions/workflows/build.yml](https://github.com/srnyx/plugin-template/actions/workflows/build.yml)
 
 # Wiki
 

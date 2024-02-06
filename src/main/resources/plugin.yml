@@ -4,6 +4,6 @@ authors:
   - srnyx
 website: https://srnyx.com
 
-main: ${group}.name.Name
+main: ${group}.name.${name}
 version: ${version}
 api-version: 1.13
