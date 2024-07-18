@@ -4,9 +4,9 @@ import xyz.srnyx.gradlegalaxy.utility.spigotAPI
 
 plugins {
     java
-    id("xyz.srnyx.gradle-galaxy") version "1.1.3"
-    id("io.github.goooler.shadow") version "8.1.7"
+    id("xyz.srnyx.gradle-galaxy") version "1.2.2"
+    id("io.github.goooler.shadow") version "8.1.8"
 }
 
-setupAnnoyingAPI("723fb94dbb", "xyz.srnyx", "0.0.1", "DESCRIPTION")
+setupAnnoyingAPI("44b9fff69a", "xyz.srnyx", "0.0.1", "DESCRIPTION")
 spigotAPI("1.8.8")
