@@ -1,4 +1,4 @@
-package xyz.srnyx.name;
+package com.srnyx.name;
 
 import xyz.srnyx.annoyingapi.AnnoyingPlugin;
 import xyz.srnyx.annoyingapi.PluginPlatform;
