@@ -8,7 +8,7 @@ public class Name extends AnnoyingPlugin {
     public Name() {
         options
                 .pluginOptions(pluginOptions -> pluginOptions.updatePlatforms(new PluginPlatform.Multi(
-                        PluginPlatform.modrinth("IDENTIFIER"), // Replace IDENTIFIER with the Modrinth identifier
+                        PluginPlatform.modrinth("ID"), // Replace ID with the Modrinth ID
                         PluginPlatform.hangar(this),
                         PluginPlatform.spigot("######")))) // Replace ###### with the Spigot resource ID
                 .bStatsOptions(bStatsOptions -> bStatsOptions.id(10000)) // Replace 10000 with the bStats ID
