@@ -1,5 +1,5 @@
+import xyz.srnyx.gradlegalaxy.utility.paper
 import xyz.srnyx.gradlegalaxy.utility.setupAnnoyingAPI
-import xyz.srnyx.gradlegalaxy.utility.spigotAPI
 
 
 plugins {
@@ -8,5 +8,5 @@ plugins {
     id("com.gradleup.shadow") version "8.3.5"
 }
 
+paper("1.8.8")
 setupAnnoyingAPI("5.1.5", "com.srnyx", "0.0.1", "DESCRIPTION")
-spigotAPI("1.8.8")
