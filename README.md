@@ -15,3 +15,5 @@ Public Minecraft plugin template repository used when I create a new repository 
 # Wiki
 
 For all information about the plugin (commands, permissions, etc...) please see the wiki at [github.com/srnyx/plugin-template/wiki](https://github.com/srnyx/plugin-template/wiki)
+
+[![Lilypad server hosting](https://us-east-1.tixte.net/uploads/media.srnyx.com/lilypad_banner.png)](https://srnyx.com/lilypad)
