@@ -4,8 +4,8 @@ import xyz.srnyx.gradlegalaxy.utility.setupAnnoyingAPI
 
 plugins {
     java
-    id("xyz.srnyx.gradle-galaxy") version "1.3.3"
-    id("com.gradleup.shadow") version "8.3.6"
+    id("xyz.srnyx.gradle-galaxy") version "2.0.0"
+    id("com.gradleup.shadow") version "8.3.8"
 }
 
 paper("1.8.8")
